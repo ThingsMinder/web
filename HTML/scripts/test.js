@@ -19,7 +19,7 @@ document.write('<br>')
 firstname = 'Lee';
 document.write(firstname);
 
-*/
+
 
 var d = new Date();
 var time = d.getHours();
@@ -31,3 +31,4 @@ if(time < 10){
 }else{
     document.write("<b>Hello</b>")
 }
+*/
