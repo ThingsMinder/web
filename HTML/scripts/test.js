@@ -49,28 +49,43 @@ function disp(){
 
 */
 
-//
-/*抽奖游戏
-var r = Math.random();
-var arr = ['Fleix','Grace','Neil','Shmily','emilie'];
+
+//抽奖游戏
+
+
 function award(){
-    if(r < 0.2){
-        alert("获奖者是： " + arr[0]);
-    }else if(r>=0.2 && r<0.4){
-        alert("获奖者是： " + arr[1]);
-    }else if(r>=0.4 && r<0.6){
-        alert("获奖者是： " + arr[2]);
-    }else if(r>=0.6 && r<0.8){
-        alert('获奖者是： ' + arr[3]);
-    }else{
-        alert('获奖者是： ' + arr[4]);
-    }
-    alert(r);
+    var r = Math.random();
+    var arr = ['Fleix','Grace','Neil','Shmily','emilie'];
+    
+    function award1(){
+        if(r < 0.2){
+            alert("获奖者是： " + arr[0]);
+        }else if(r>=0.2 && r<0.4){
+            alert("获奖者是： " + arr[1]);
+        }else if(r>=0.4 && r<0.6){
+            alert("获奖者是： " + arr[2]);
+        }else if(r>=0.6 && r<0.8){
+            alert('获奖者是： ' + arr[3]);
+        }else{
+            alert('获奖者是： ' + arr[4]);
+        }
+        alert(r);
     //var intr = parseInt(r);
-    alert('奖金金额是：' + parseInt(r*10000));
+        alert('奖金金额是：' + parseInt(r*10000));
+    }
+    return award1();
+}
+
+
+/*
+function show_confirm(){
+    var r = confirm('Press a button');
+    if(r==true){
+        alert('ok');
+    }else{
+        alert('cancel');
+    }
 }
 */
-
-
 
 
