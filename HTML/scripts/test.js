@@ -13,4 +13,10 @@ document.write('<p>这是另一个段落</p>');
 }
 */
 
+var firstname = 'John';
+document.write(firstname);
+document.write('<br>')
+firstname = 'Lee';
+document.write(firstname);
+
 
