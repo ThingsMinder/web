@@ -54,25 +54,34 @@ function disp(){
 
 
 function award(){
-    var r = Math.random();
+    var r = Math.random(10);
     var arr = ['Fleix','Grace','Neil','Shmily','emilie'];
-    
-    function award1(){
-        if(r < 0.2){
-            alert("获奖者是： " + arr[0]);
-        }else if(r>=0.2 && r<0.4){
-            alert("获奖者是： " + arr[1]);
-        }else if(r>=0.4 && r<0.6){
-            alert("获奖者是： " + arr[2]);
-        }else if(r>=0.6 && r<0.8){
-            alert('获奖者是： ' + arr[3]);
-        }else{
-            alert('获奖者是： ' + arr[4]);
-        }
-        alert(r);
-    //var intr = parseInt(r);
-        alert('奖金金额是：' + parseInt(r*10000));
+    /*
+    for(i=0;i<=4;i++){
+
     }
+    */
+
+    function award1(){
+        
+           if(r < 0.2){
+                alert("获奖者是： " + arr[0]);
+            }else if(r>=0.2 && r<0.4){
+                alert("获奖者是： " + arr[1]);
+            }else if(r>=0.4 && r<0.6){
+                alert("获奖者是： " + arr[2]);
+            }else if(r>=0.6 && r<0.8){
+                alert('获奖者是： ' + arr[3]);
+            }else{
+                alert('获奖者是： ' + arr[4]);
+            }
+            alert(r); 
+            alert('奖金金额是：' + parseInt(r*10000));
+        }
+        
+    //var intr = parseInt(r);
+        
+    
     return award1();
 }
 
