@@ -1,35 +1,16 @@
 'use strict'
 
-function winner(){
-    var winners = new Array(); 
-    //function w(){     
-        for(var i=0;i<2;i++){
-            var wi = prompt('Please input the name:','Felix');   
-            if(wi!=null && wi!=''){
-                winners[i] = wi;
-
-            }else{
-                document.write('Please try again' + "<br>");
-            }
+function message(){
+    var txt = '';
+    try{
+        adddlert('Welcome!')
+    }
+    catch(err){
+        txt = '本页中存在错误。\n\n';
+        txt += "点击'确定'继续查看本页,\n";
+        txt += "点击'取消'返回首页.\n";
+        if(!confirm(txt)){
+            document.location.href='/index.html'
         }
-    //}
-    return winners;   
-}
-
-
-
-function disp_winner(){
-    var w = winner();
-    var winner_num = new Array();    
-    for(var j in w){
-        var wi_num = parseInt(Math.random()*10000)
-        if(wi_num<=5000){
-            winner_num[j] = wi_num;
-            document.write(w[j] + "的年终奖是： " + winner_num[j] + '<br>');
-        }else{
-            winner_num[j] = wi_num - 5000;
-            document.write(w[j] + "的年终奖是： " + winner_num[j] + "<br>");
-        } 
     }
 }
-
