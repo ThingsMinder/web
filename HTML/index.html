@@ -4,6 +4,7 @@
         <meta charset="utf-8">
         <script src="scripts/test1.js"></script>
         <script src="scripts/test_winners.js"></script>
+        <script src="scripts/test_ajax.js"></script>
     </head>
     <body>
         <!--
@@ -59,12 +60,20 @@
         </script>
         -->
 
-        
+        <!--
         <input type="button" onclick="message()" value="查看消息" >
         <br>
         <input type="button" onclick="disp_winner()" value="第二轮抽奖啦。。。。。" >        
         <br>
         <input type="button" onclick="disp_winner()" value="第三轮抽奖啦。。。。。" >   
+        -->
+        
+        <div id="myDiv"><h2>AJAX</h2></div>
+        <!--
+        <button type="button" onclick="loadXMLDoc()">请求数据</button>
+        -->
+        <input type="button" onclick='loadXMLDoc()' value='请求数据'>
+        <div id="myDiv"></div>
 
     </body>
 </html>
