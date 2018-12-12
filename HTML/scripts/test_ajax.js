@@ -20,9 +20,9 @@ function loadXMLDoc(){
     }
     xmlhttp.onreadystatechange = function(){
         if(xmlhttp.readyState==4 && xmlhttp.status==200){
-            document.getElementById('myDiv').innerHTML=xmlhttp.responseText;
+            document.getElementById('myDiv').innerHTML = xmlhttp.responseText;
         }
     }
-    xmlhttp.open('GET','/ajax/test1.txt',true);
+    xmlhttp.open("GET","http://127.0.0.1/txt.jsp",true);
     xmlhttp.send();
 }
