@@ -12,6 +12,6 @@ function loadXMLDoc(){
             document.getElementById('myDiv').innerHTML = xmlhttp.responseText;
         }
     }
-    xmlhttp.open("GET","http://127.0.0.1/txt.jsp",true);
+    xmlhttp.open("GET","test1.txt.",true);
     xmlhttp.send();
 }
