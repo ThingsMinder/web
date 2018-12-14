@@ -51,17 +51,10 @@ if (strlen($q) > 0)
     }
   }
 
-  if ($hint == "")
-  {
-  $response="no suggestion";
+  if ($hint == "") {
+    $response="no suggestion";
+  }else{
+    $response=$hint;
   }
-else
-  {
-  $response=$hint;
-  }
-
 echo $response;
-
-
-
 ?>
