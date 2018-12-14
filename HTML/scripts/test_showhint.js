@@ -16,6 +16,6 @@ function showHint(str){
             document.getElementById('txtHint').innerHTML=responseText;
         }
     }
-    xmlhttp.open('GET','ajax/gethint.php?q='+str,true);
+    xmlhttp.open('GET','http://localhost:8000/mygit/HTML/ajax/gethint.php?q='+str,true);
     xmlhttp.send();
 }
