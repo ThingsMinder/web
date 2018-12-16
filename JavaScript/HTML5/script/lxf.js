@@ -38,7 +38,7 @@ function showName(){
         for(var i=0;i<=arr1.length-1;i++){
             for(var j=1;j<=i+1;j++){
                 var nom1 = '第' + j + "位参与者是： ";
-                nom.push(nom1 + arr1[i]); 
+                nom.push(nom1 + arr1[i] + '<br>'); 
                 //document.getElementById('input').innerHTML = nom;
             } 
         } 
