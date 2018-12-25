@@ -72,6 +72,7 @@ var xiaoming = {
 alert(getAge.apply(xiaoming,[1976]));
 */
 
+/*
 function string2int(s){
     var s = document.getElementById('input').value;
     var arr = [];
@@ -83,3 +84,47 @@ function string2int(s){
     }
     return arr.map(pu).reduce(function(x,y){return 10*x +y;})
 }
+*/
+
+/*
+var arr1 = [1,2,4,5,6,9,10,15];
+var arr2 = ['A','B','','','C',null,undefined,'D'];
+var r1 = arr1.filter(function(x){
+    return x % 2 !== 0;
+});
+var r2 = arr2.filter(function(s){
+    return s && s.trim();
+});
+//alert(r1);
+document.write(r1+'<br>');
+//alert(r2);
+document.write(r2);
+
+
+var r3 = r2.filter(function(element,index,self){
+    console.log(element);
+    console.log(index);
+    console.log(self);
+    return true;
+});
+*/
+
+function count(){
+    var arr = [];
+    for(var i=1;i<=3;i++){
+        arr.push(function(){
+            return i * i;
+        });
+    }
+    return arr;
+}
+
+var results = count();
+var f0 = results[0];
+var f1 = results[1];
+var f2 = results[2];
+
+alert(f1());
+alert(f2());
+alert(f3());
+
