@@ -109,12 +109,15 @@ var r3 = r2.filter(function(element,index,self){
 });
 */
 
+/*
 function count(){
     var arr = [];
     for(var i=1;i<=3;i++){
-        arr.push(function(){
-            return i * i;
-        });
+        arr.push((function(n){
+            return function(){
+                return n * n;
+            }
+        })(i));
     }
     return arr;
 }
@@ -124,7 +127,75 @@ var f0 = results[0];
 var f1 = results[1];
 var f2 = results[2];
 
-alert(f1());
-alert(f2());
-alert(f3());
+//alert(f0());
+//alert(f1());
+//alert(f2());
+//alert(results[0] + '<br>' + results[1] + '<br>' + results[2]);
 
+
+function create_counter(initial){
+    var x = initial || 0;
+    return{
+        inc:function(){
+            x += 1;
+            return x;
+        }
+    }
+}
+
+var c1 = create_counter();
+document.write(c1.inc()+'</br>');
+document.write(c1.inc()+"<br>");
+document.write(c1.inc()+"<br>");
+
+var c2 = create_counter(10);
+document.write(c2.inc()+"<br>");
+document.write(c2.inc()+"<br>");
+document.write(c2.inc()+"<br>");
+*/
+
+/*
+function make_pow(n){
+    return function(x){
+        return Math.pow(x,n);
+    }
+}
+
+var pow2 = make_pow(2);
+var pow3 = make_pow(3);
+
+document.write(pow2(5)+'<br>');
+document.write(pow3(7)+'<br>');
+*/
+
+var zero = function(f){
+    return function(x){
+        return x;
+    }
+};
+
+var one = function(f){
+    return function(x){
+        return x;
+    }
+};
+
+function add(n,m){
+    return function(f){
+        return function(x){
+            return m(f)(n(f)(x));
+        }
+    }
+}
+
+var two = add(one,one);
+var three = add(one,two);
+var five = add(two,three);
+
+(three(function(){
+    document.write('print 3 times\n');
+}))();
+
+(five(function(){
+    document.write('print 5 times');
+}));
