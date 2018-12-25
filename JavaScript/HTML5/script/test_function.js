@@ -175,8 +175,8 @@ var zero = function(f){
 };
 
 var one = function(f){
-    return function(x){
-        return x;
+    return function(){
+        return f();
     }
 };
 
@@ -193,7 +193,7 @@ var three = add(one,two);
 var five = add(two,three);
 
 (three(function(){
-    document.write('print 3 times\n');
+    document.write('print 3 times' + '<br>');
 }))();
 
 (five(function(){
