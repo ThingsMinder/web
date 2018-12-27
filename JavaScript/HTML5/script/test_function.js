@@ -168,6 +168,7 @@ document.write(pow2(5)+'<br>');
 document.write(pow3(7)+'<br>');
 */
 
+/*
 var zero = function(f){
     return function(x){
         return x;
@@ -199,3 +200,15 @@ var five = add(two,three);
 (five(function(){
     document.write('print 5 times');
 }));
+*/
+
+
+//x => x * x;
+x => {
+    if(x>0){
+        return x * x;
+    }else{
+        return -x * x;
+    }
+}
+
