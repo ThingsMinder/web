@@ -204,6 +204,8 @@ var five = add(two,three);
 
 
 //x => x * x;
+
+/*
 x => {
     if(x>0){
         return x * x;
@@ -211,4 +213,21 @@ x => {
         return -x * x;
     }
 }
+*/
 
+function* fib(max){
+    var 
+        t,
+        a = 0,
+        b = 1,
+        n = 0;
+    while(n < max){
+        yield a;
+        [a,b] = [b,a+b];
+        n ++;
+    }
+    return;
+}
+for(var x of fib(10)){
+    document.write(x + '<br>');
+}
