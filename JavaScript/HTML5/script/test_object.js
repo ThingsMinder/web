@@ -50,6 +50,7 @@ function convert(key,value){
 alert(JSON.stringify(xiaoming));
 */
 
+/*
 var Student = {
     name:'Robot',
     height:1.2,
@@ -70,3 +71,23 @@ alert(xiaoming.name);
 alert(xiaoming.run());
 document.write(xiaoming.run());
 alert(xiaoming.__proto__ === Student);
+*/
+
+function Student(props){
+    this.name = props.name || 'Unnamed';
+}
+
+Student.prototype.hello = function(){
+    alert('Hello, ' + this.name + '!');
+}
+
+function PrimaryStudent(props){
+    Student.call(this,props);
+    this.grade = props.grade || 1;
+}
+
+inherits(PrimaryStudent,Student);
+
+PrimaryStudent.prototype.getGrade = function(){
+    return this.grade;
+}
