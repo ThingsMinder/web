@@ -10,4 +10,7 @@
 </view>
 -->
 
-<view class='sec'>年会抽奖</view>
+<view class='sec'>
+  年会抽奖
+  <text>{{message}}</text>
+</view>
