@@ -1,4 +1,5 @@
 <!--index.wxml-->
+<!--
 <view class='section'>
   <view>view 组件</view>
   <view class='view-parent-container' hover-class='hover-parent-container'>
@@ -7,3 +8,6 @@
     </view>  
   </view>
 </view>
+-->
+
+<view class='sec'>年会抽奖</view>
