@@ -11,6 +11,20 @@
 -->
 
 <view class='sec'>
-  年会抽奖
-  <text>{{message}}</text>
+  年会抽奖 
+</view>
+<view>
+  <text>{{message}}{{'1'}}:{{message1}}</text>
+</view>
+<view>
+  <text>{{message}}{{'2'}}:{{message2}}</text>
+</view>
+<view>
+  <text>{{message}}{{'3'}}:{{message3}}</text>
+</view>
+<view>
+  <text>{{message}}{{'4'}}:{{message4}}</text>
+</view>
+<view>
+  <text>{{message}}{{'5'}}:{{message5}}</text>
 </view>
