@@ -25,6 +25,7 @@ Page({
     context.arc(120,80,5,0,2 * Math.PI,true)
     context.stroke()
     context.draw()
+    
   }
 
 
