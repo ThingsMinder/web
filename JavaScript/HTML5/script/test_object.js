@@ -73,6 +73,7 @@ document.write(xiaoming.run());
 alert(xiaoming.__proto__ === Student);
 */
 
+/*
 function Student(props){
     this.name = props.name || 'Unnamed';
 }
@@ -91,3 +92,30 @@ inherits(PrimaryStudent,Student);
 PrimaryStudent.prototype.getGrade = function(){
     return this.grade;
 }
+*/
+
+var name = 'The Window';
+var object = {
+    name:'my object',
+    getNameFunc:function(){
+        return function(){
+            return this.name;
+        };
+    }
+};
+
+/*
+var object1 = {
+    name:'my object',
+    getNameFunc1:function(){
+        var that = this;
+        return function(){
+            return that.name;
+        };
+    }
+};
+*/
+
+alert(object.getNameFunc()());
+//alert(object1.getNameFunc1()());
+
