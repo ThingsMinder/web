@@ -1,30 +1,60 @@
 'use strict'
 
 var arr = ['f0','f1','f2','f3','f4','f5','f6','f7','f8','f9','f10'];
+var num1,num2_1,num2_2,num3_1,num3_2,num3_3;
 var arr_past = [];
-var num3_1,num3_2,num3_3,num2_1,num2_2,num1_1;
-function choujiang3(){
-    var num3_1 = Math.floor(Math.random()*10);
-    var num3_2 = Math.floor(Math.random()*10);
-    var num3_3 = Math.floor(Math.random()*10);
-    while(num3_1 === num3_2 || num3_2 === num3_3 || num3_1 === num3_3){ 
-        num3_2 = Math.floor(Math.random()*10);
-        num3_3 = Math.floor(Math.random()*10);
-    }
-    document.getElementById('num_3_0_1').innerHTML = "第一位获奖者是：" + arr[num3_1];
-    document.getElementById('num_3_0_2').innerHTML = "第二位获奖者是：" +  arr[num3_2];
-    document.getElementById('num_3_0_3').innerHTML = "第三位获奖者是：" +  arr[num3_3];
-
-    arr_past.push(arr[num3_1],arr[num3_2],arr[num3_3]);
-
-    return  arr_past;
-
-
-
+function lottery31(){
+    num3_1 = Math.floor(Math.random()*10);
+    arr_past.push(arr[num3_1]);
+    arr.splice(num3_1,1);
+    document.getElementById('num3_1').value = arr_past[arr_past.length-1];
+    //document.getElementById('num31').disabled = disabled;
+    return arr;
 }
 
-function show3(){
-    document.getElementById('num_3_1').innerHTML = "三等奖获得者为：" + arr_past + '<br>'
-                                                 + '暂未获奖得人有：' ;
+function lottery32(){
+    num3_2 = Math.floor(Math.random()*10);
+    arr_past.push(arr[num3_2]);
+    arr.splice(num3_2,1);
+    document.getElementById('num3_2').value = arr_past[arr_past.length-1];
+    //document.getElementById('num31').disabled = disabled;
+    return arr;
 }
 
+function lottery33(){
+    num3_3 = Math.floor(Math.random()*10);
+    arr_past.push(arr[num3_3]);
+    arr.splice(num3_3,1);
+    document.getElementById('num3_3').value = arr_past[arr_past.length-1];
+    //document.getElementById('num31').disabled = disabled;
+    return arr;
+}
+
+function lottery21(){
+    num2_1 = Math.floor(Math.random()*10);
+    arr_past.push(arr[num2_1]);
+    arr.splice(num2_1,1);
+    document.getElementById('num2_1').value = arr_past[arr_past.length-1];
+    //document.getElementById('num31').disabled = disabled;
+    return arr;
+}
+
+function lottery22(){
+    num2_2 = Math.floor(Math.random()*10);
+    arr_past.push(arr[num2_2]);
+    arr.splice(num2_2,1);
+    document.getElementById('num2_2').value = arr_past[arr_past.length-1];
+    //document.getElementById('num31').disabled = disabled;
+    return arr;
+}
+
+function lottery1(){
+    num1 = Math.floor(Math.random()*10);
+    arr_past.push(arr[num1]);
+    arr.splice(num1,1);
+    document.getElementById('num1').value = arr_past[arr_past.length-1];
+    document.getElementById('un').innerHTML = 'Unlucky Person:';
+    document.getElementById('up').innerHTML = arr;
+    //document.getElementById('num31').disabled = disabled;
+    return arr;
+}
