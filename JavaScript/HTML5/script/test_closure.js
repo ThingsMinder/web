@@ -1,4 +1,4 @@
-'use strict'
+//'use strict'
 
 /*
 var name = 'the window';
@@ -13,6 +13,7 @@ var object = {
 };
 alert(object.getNameFunc()());
 */
+
 
 function f1(){
     var n = 99;
