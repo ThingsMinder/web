@@ -57,6 +57,7 @@ $(document).ready(function(){
 });
 */
 
+/*
 $(document).ready(function(){
     $('#addText').click(function(){
         $('p').prepend('<b>Hello,Added</b>');
@@ -67,6 +68,32 @@ $(document).ready(function(){
         }
     });  
 });
+
+
+function appendText(){
+    var txt1 = '<div>text</div>';
+    var txt2 = $('<div></div>').text('text');
+    var txt3 = document.createElement('div');
+    txt3.innerHTML = 'text';
+    $('body').append(txt1,txt2,txt3);
+}
+
+function appendText1(){
+    var txt1 = '<p>text</p>';
+    var txt2 = $('<p></p>').text('text');
+    var txt3 = document.createElement('p');
+    txt3.innerHTML = 'text';
+    $('body').append(txt1,txt2,txt3);
+}
+*/
+
+$(document).ready(function(){
+    $('button').click(function(){
+        $('#div1').load('/ajax.txt  #p1');
+    });
+});
+
+
 
 
 
