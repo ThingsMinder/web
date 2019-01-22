@@ -87,12 +87,20 @@ function appendText1(){
 }
 */
 
+/*
 $(document).ready(function(){
     $('button').click(function(){
-        $('#div1').load('/ajax.txt  #p1');
+        $('#div1').load('ajax.txt #p1');
     });
 });
+*/
 
+$.noConflict();
+jQuery(document).ready(function(){
+    jQuery('button').click(function(){
+        alert('I love you!')
+    });
+});
 
 
 
