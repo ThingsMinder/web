@@ -98,7 +98,8 @@ $(document).ready(function(){
 $.noConflict();
 jQuery(document).ready(function(){
     jQuery('button').click(function(){
-        alert('I love you!')
+        jQuery('div1').text('I love you!');
+        alert('I love you!');
     });
 });
 
