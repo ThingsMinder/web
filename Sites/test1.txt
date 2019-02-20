@@ -1,0 +1,13 @@
+<p>AJAX实现读取文本文档内容到网页
+</p>
+<p>
+function readTxt() {
+        var xhr = new XMLHttpRequest();
+        xhr.open('get','txt/ajax_info.txt',true);
+        xhr.send();
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState == 4&&xhr.status == 200){
+                alert("请求成功且返回数据成功");
+                jsContainer.innerHTML = xhr.responseText;
+            }
+</p>
