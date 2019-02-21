@@ -117,6 +117,107 @@ echo str_replace("World","Kitty","Hello,World!");
 */
 
 
+/*
+define("greeting",'Hello ljj!',true);
+echo greeting;
+echo"<br>";
+
+echo Greeting,"<br>";
+
+function myTest1(){
+    echo greeting;
+}
+myTest1();
+*/
+
+/*
+$a = "Hello, ";
+
+function myTest2($obj){
+    global$a,$c;
+    $b = $a."$obj".", ".$c;
+    echo $b,"<br>";
+}
+$c = "I love you!";
+myTest2("LJJ");
+myTest2("QJE");
+myTest2("LYS");
+myTest2("LMF");
+
+
+echo"<br>"."<br>"."<br>";
+*/
+
+/*
+
+$t = date("H");
+if($t<"10"){
+    echo "Have a good morning!";
+}elseif($t<"20"){
+    echo "Hvae a good day!";
+}else{
+    echo "Have a good night!";
+}
+
+echo "<br>"."<br>";
+
+$favfruit = "orange";
+
+switch($favfruit){
+    case "apple":
+        echo"Your favorite fruit is apple!";
+        break;
+    case "orange":
+        echo"Your favorite fruit is orange!";
+        break;
+    case "banana":
+        echo"Your favorite fruit is banana!";
+        break;
+    default:
+        echo"Your favorite fruit is especially!";
+}
+*/
+
+
+$x=1;
+
+while($x<1){
+    echo "这个数字是：",$x,"<br>";
+    $x++;
+}
+
+do{
+    echo"这个数字是：",$x,"<br>";
+    $x++;
+}while($x<0);
+
+for($x=0; $x<=10; $x++){
+    echo"No. is:$x <br>";
+}
+
+$colors = array("Blue",'red','yellow','green');
+
+foreach($colors as $value){
+    echo"$value <br>";
+}
+
+$age=array("Bill"=>"63","steve"=>"56","Elon"=>"47");
+sort($age);
+echo"Elon is ".$age['Elon']." years old!"."<br>";
+foreach($age as $x=>$x_value){
+    echo"Key=".$x.",Value=".$x_value."<br>";  
+}
+
+echo $_SERVER['PHP_SELF'],"<br>";
+echo $_SERVER['SERVER_NAME'],'<br>';
+echo $_SERVER['HTTP_HOST'],'<br>';
+echo $_SERVER['HTTP_REFERER'],"<br>";
+echo $_SERVER['HTTP_USER_AGENT'],'<br>';
+echo $_SERVER['SCRIPT_NAME'];
+
+
+
+
 
 
 
