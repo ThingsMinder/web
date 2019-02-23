@@ -3,7 +3,23 @@
 <body>
 <h1>My Page</h1>
 
+<!--
+<form method='post' action='<?php echo $_SERVER['PHP_SELF'] ?>'>
+Name:<input type='text' name='fname'>
+<input type='submit'>
+</form>
+-->
+
+<a href="/PHP/test.php?subject=PHP&web=www.in-et.com">test</a>
+
 <?php
+/*
+$name = $_POST['fname'];
+echo $name;
+*/
+
+echo"在".$_GET['web']."学习".$_GET['subject'];
+
 /*
 echo "Hello World!<br>";
 
@@ -178,7 +194,7 @@ switch($favfruit){
 }
 */
 
-
+/*
 $x=1;
 
 while($x<1){
@@ -214,6 +230,11 @@ echo $_SERVER['HTTP_HOST'],'<br>';
 echo $_SERVER['HTTP_REFERER'],"<br>";
 echo $_SERVER['HTTP_USER_AGENT'],'<br>';
 echo $_SERVER['SCRIPT_NAME'];
+*/
+
+
+
+
 
 
 
