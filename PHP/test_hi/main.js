@@ -1,20 +1,33 @@
 'use strict'
 
-/*
-var num1,num2,num3;
-num1 = document.getElementById('num1').value;
-num2 = document.getElementById('num2').value;
-*/
+var xmlHttp;
 
-function res(){
-    var num1,num2,num3;
-    num1 = document.getElementById('num1').value;
-    num2 = document.getElementById('num2').value;
-
-    if(num1!=null && num2!=null){
-        num3 = num1 + num2;
+function getVote(int){
+    xmlHttp = GetXmlHttpObject();
+    if(xmlHttp == null){
+        alert('Browser does not support HTTP Request');
+        return;
     }
-    //return num3;
-    document.getElementById('num3').value = num3;
-    return;
+    var url = 'poll_vote.php';
+    url = url + "?vote=" + int;
+    url = url + "&sid=" + Math.random();
+    xmlHttp.onreadystatechange = stateChanged;
+    xmlHttp.open('GET',url,true);
+    xmlHttp.send(null);
+}
+
+function stateChanged(){
+    if(xmlHttp.readyState == 4 || xmlHttp.readyState == "comlete"){
+        document.getElementById('poll').innerHTML = xmlHttp.responseText;
+    }
+}
+
+function GetXmlHttpObject(){
+    var objXMLHttp = null;
+    if(window.XMLHttpRequest){
+        objXMLHttp = new XMLHttpRequest();
+    }else if(window.ActiveXObject){
+        objXMLHttp = new ActiveXObject('Microsoft.XMLHTP');
+    }
+    return objXMLHttp;
 }

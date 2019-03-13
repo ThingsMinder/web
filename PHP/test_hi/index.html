@@ -6,15 +6,14 @@
         <script src="main.js"></script>
     </head>
     <body>
-        <h1>1st Page</h1>
-        num1:
-        <input type="text" id="num1">
-        num2:
-        <input type="text" id="num2">
-        Res：
-        <input type="text" id="num3">
-
-        <input type="button" value="Cal" onclick="res()">
-        
+        <h1>Page1</h1>
+        <div id="poll">
+            <h2>Do you love me?</h2>
+            <form>
+                Yes:<input type='radio' name='vote' value='0' onclick="getVote(this.value)">
+                <br>
+                No:<input type="radio" name="vote" value="1" onclick="getVote(this.value)">
+            </form>
+        </div>
     </body>
 </html>
