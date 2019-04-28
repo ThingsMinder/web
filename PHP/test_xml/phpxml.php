@@ -4,21 +4,21 @@ $parser = xml_parser_create();
 
 function start($parser,$element_name,$element_attrs){
     switch($element_name){
-        case "NOTE":
+        case "note":
             echo "-- Note --<br>";
         break;
-        case "TO":
-            echo"To:<br>".'<br>';
+        case "to":
+            echo "To:";
         break;
-        case "FROM":
-            echo"From:".'<br>';
+        case "from":
+            echo "From:";
         break;
-        case "HEADING:":
-            echo"Heading:".'<br>';
+        case "heading":
+            echo "Heading:";
         break;
-        case "BODY":
-            echo"Message".'<br>';
-        break;
+        case "body":
+            echo "Message";
+        
     }
 }
 
@@ -38,7 +38,7 @@ $fp=fopen('test.xml','r');
 
 while($data=fread($fp,4096)){
     xml_parse($parser,$data,feof($fp))or 
-    die(sprintf('XML Error:%s at line %d',
+    die(sprintf("XML Error:%s at line %d",
     xml_error_string(xml_get_error_code($parser)),
     xml_get_current_line_number($parser)));
 }

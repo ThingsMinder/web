@@ -5,7 +5,7 @@
     }
 
     
-
+/*
     if(mysql_query('CREATE DATABASE my_db',$con)){
         echo "Database created";
     }else{
@@ -35,7 +35,7 @@
 
     
     mysql_close($con);
-
+*/
     
 
 ?>
