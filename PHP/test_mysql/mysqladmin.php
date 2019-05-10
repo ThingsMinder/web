@@ -11,7 +11,7 @@
             }
         */
 
-        $con = mysql_connect('ThingsMind.local:3306','root','11111111');
+        $con = mysql_connect('127.0.0.1:/tmp/mysql.sock','root','11111111');
         if(!con){
             die('Could not connect:'.mysql_error());
         }
