@@ -1,41 +1,50 @@
 <?php
-    $con = mysql_connect("localhost","root","11111111");
+    $con = new mysqli('localhost','root','11111111');
+    //这个连接不行 
+    /*  
+    $con = mysqli_connect('localhost','root','11111111');
+    */
     if(!$con){
-        die('Could not connect:'.mysql_error());
-    }
-
-    
-/*
-    if(mysql_query('CREATE DATABASE my_db',$con)){
-        echo "Database created";
+        die("连接失败: ".$con->connect_error).'<br>';
     }else{
-        echo "Error creating database: ".mysql_error();
+        echo "连接成功".'<br>';
     }
-
-    mysql_select_db('my_db',$con);
-    $sql = "CREATE TABLE Persons(
-        personID int NOT NULL AUTO_INCREMENT,
-        PRIMARY KEY(personID),
-        FirstName varchar(15),
-        LastName varchar(15),
-        Age int
-    )";
-
-    mysql_query($sql,$con);
-
-    mysql_query("INSERT INTO Persons(FirstName,LastName,Age) VALUES('Peter','Griffin','35')");
-    mysql_query("INSERT INTO Persons(FirstName,LastName,Age) Values('Glenn','Quagmire','33')");
-
+    $con->set_charset("utf8");
     
-    $result = mysql_query("SELECT * FROM Persons");
+    //这是我在2019年5月12日找到的唯一能够创建数据库的函数，折腾了我整整半年多之久。
+    mysqli_select_db($con,myDB);
 
-    while($row = mysql_fetch_array($result)){
-        echo $row['FirstName'].' '.$row['LastName'].'<br>';
+    if (myDB) {
+        echo "数据库创建成功".'<br>';
+    } else {
+        echo "Error creating database: ".$con->error.'<br>';
+    }   
+
+    $sql = "CREATE TABLE MyGuests (
+        id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY, 
+        firstname VARCHAR(30) NOT NULL,
+        lastname VARCHAR(30) NOT NULL,
+        email VARCHAR(50),
+        reg_date TIMESTAMP
+        )";
+    
+    mysqli_query($con,$sql);
+
+    $sql = "INSERT INTO MyGuests (firstname, lastname, email)
+    VALUES ('John', 'Doe', 'john@example.com')";
+
+    mysqli_prepare($con,$sql);
+
+    $sql = 'SELECT firstname,lastname FROM MyGuests';
+    mysqli_query($con,$sql);
+    $result = $con;
+    $row = mysqli_fetch_assoc($result);
+    if($result){
+        echo "BEGIN: ".'<br>';
+        echo "firstname: ".$row['firstname'].' - '.'lastname: '.$row['lastname'].'<br>';
+    }else{
+        echo '无结果';
     }
-
-    
-    mysql_close($con);
-*/
-    
+    $con->close();
 
 ?>

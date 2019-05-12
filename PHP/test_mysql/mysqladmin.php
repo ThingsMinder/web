@@ -1,25 +1,26 @@
 <html>
     <head>
-        <title>PHP with MySQL</title>>
+        <title>PHP with MySQL</title>
     </head>
     <body>
         <?php
         /*
-            $retval = mysql_function(value);
-            if(!$retval){
-                die("相关错误信息");
+            try{
+                $con = new PDO("mysql:host=loaclhost;dbname=myDB;port=3306","root","11111111");
+                echo '连接成功';
+                $con = null;
             }
+            catch(PDOException $e){
+                echo $e->getMessage();
+                die();
+            }
+
+        
+            $con = null;
         */
 
-        $con = mysql_connect('127.0.0.1:/tmp/mysql.sock','root','11111111');
-        if(!con){
-            die('Could not connect:'.mysql_error());
-        }
-        else{
-            echo "连接成功";
-        }
+
         
-        //mysql_close($con);
         ?>
     </body>
 </html>
