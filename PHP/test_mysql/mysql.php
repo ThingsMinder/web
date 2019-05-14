@@ -1,5 +1,5 @@
 <?php
-    $con = new mysqli('localhost','root','11111111');
+    $con = new mysqli('localhost','root','11111111','crashcourse');
     //这个连接不行 
     /*  
     $con = mysqli_connect('localhost','root','11111111');
@@ -9,8 +9,30 @@
     }else{
         echo "连接成功".'<br>';
     }
-    $con->set_charset("utf8");
-    
+    //$con->set_charset("utf8");
+    $con->query("SET NAMES utf8");
+
+    $result = $con->query("SELECT * FROM products WHERE vend_id = '1001'");
+    echo "<table border='1' align='center'><tr align='center'>";
+    while($field = $result->field())
+        echo "<td>".$field->name.'</td>';
+    echo "</tr>";
+    while($row=$result->fetch_row()){
+        echo "<tr>";
+        for($i=0;$i<$result->field_count;$i++)
+            echo "<td>".$row[$i]."</td>";
+        echo "</tr>";
+    } 
+    echo "</table>";
+
+    $result->free();
+    $con->close();
+
+
+
+
+
+    /*
     //这是我在2019年5月12日找到的唯一能够创建数据库的函数，折腾了我整整半年多之久。
     mysqli_select_db($con,myDB);
 
@@ -46,5 +68,7 @@
         echo '无结果';
     }
     $con->close();
+    */
+
 
 ?>
