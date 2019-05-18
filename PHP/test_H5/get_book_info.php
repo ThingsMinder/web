@@ -19,7 +19,7 @@
                 if($total_records == 1){
                     $row = mysqli_fetch_assoc($result);
 
-                    echo json_decode(array("book_id"=>$row["book_id"],
+                    echo json_encode(array("book_id"=>$row["book_id"],
                                      "image_name"=>$row["image_name"],"description"=>$row["description"]));
                     
                 }else{
