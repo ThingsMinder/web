@@ -120,7 +120,7 @@
     }
     */
 
-    mkdir("/Users/thingsmind/mygit/PHP/test_GD");
+    //mkdir("/Users/thingsmind/mygit/PHP/test_GD");
 
 
 
