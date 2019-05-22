@@ -8,13 +8,13 @@
         <?php
 
             $handle = fopen('abc.txt','w+');
-            $num = $_POST['num'];
-            $contents = '';
+            $num = $_GET['num'];
+            $contents = $_GET['contents'];
             for($i=0;$i<$num;$i++){
                 for($j=$num;$j>$i;$j--){
                     $contents.='I';
                     fwrite($handle,$contents);
-                    echo 'I';
+                    echo $contents;
                 }
                 echo '<br>';
             }
