@@ -29,6 +29,8 @@
         echo "error line: ".$ex->getLine().'<br>';
     }
     */
+
+    /*
     function create_connection(){
         $link = mysqli_connect('localhost','root','11111111')
         or die('无法建立数据链接： '.mysqli_connect_error());
@@ -44,5 +46,10 @@
         $result = mysqli_query($link,$sql);
         return $result;
     }
+    */
+
+    
+    
+
 
 ?>
