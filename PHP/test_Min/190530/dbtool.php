@@ -14,17 +14,25 @@
             }
 
             function execute_sql($link,$database,$sql){
-                //echo 'II';
                 mysqli_select_db($link,$database) 
                     or die('无法连接数据库： '.mysqli_error($link));
-                
                 $result = mysqli_query($link,$sql);
-                echo 'II';
                 if($result){
-                    echo '!!';
+                    echo '恭喜您！入库成功！';
+                }
+                return $result;
+            }
+
+            function re_execute_sql($link,$database,$sql){
+                mysqli_select_db($link,$database) 
+                    or die('无法连接数据库： '.mysqli_error($link));
+                $result = mysqli_query($link,$sql);
+                if($result){
+                    echo '读取数据库成功!';
                 }
                 return $result;
             }
         ?>
+        
     </body>
 </html>

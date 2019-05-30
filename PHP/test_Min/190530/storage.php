@@ -9,24 +9,18 @@
             require_once('dbtool.php');
             $link = create_connection();
 
-            $a = $_GET['a'];
-            $b = $_GET['b'];
-            $c = $_GET['c'];
-            $d = $_GET['d'];
-            $e = $_GET['e'];
-            $f = $_GET['f'];
-
-            echo $a." ".$b.' '.$c.' '.$d.' '.$e.' '.$f.'<br>';
+            $cust_name = $_GET['cust_name'];
+            $cust_city = $_GET['cust_city'];
+            $cust_contact = $_GET['cust_contact'];
 
             $sql = "INSERT INTO customers(cust_name,
-                                          cust_address,
                                           cust_city,
-                                          cust_state,
-                                          cust_zip,
-                                          cust_country)
-                                          VALUES('$a','$b','$c','$d','$e','$f')";
+                                          cust_contact)
+                                          VALUES('$cust_name',
+                                                 '$cust_city',
+                                                 '$cust_contact')";
             
-            $result = execute_sql($link,"crashcourse",$sql);
+            $result = execute_sql($link,"thingsmind",$sql);
            
 
             mysqli_close($link);
