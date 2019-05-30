@@ -8,16 +8,19 @@
         <?php
             require_once('dbtool.php');
             $link = create_connection();
-            $search = $_GET['search'];
-            $sql = "SELECT * FROM customers WHERE cust_name=$search";
-            $result = execute_sql($link,'crashcourse',$sql);
-            /*
-            if($result){
-                echo '11';
+            $cust_name = $_GET['cust_name'];
+            function sql($what){
+                $sql = "SELECT * FROM customers WHERE cust_$what=$cust_$what";
+                return $sql;
             }
-            */
+            //$sql = "SELECT * FROM customers WHERE cust_name=$cust_name";
+            
+            function result(){
+                $result = execute_sql($link,'thingsmind',$sql);
+                return $result;
+            }
+            
 
-            //留待明日继续 20190529
             echo "<table border='1' align='center'><tr align='center'>";
 
             for($i=0;$i<mysqli_num_fields($result);$i++){
