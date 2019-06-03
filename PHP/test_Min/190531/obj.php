@@ -50,6 +50,7 @@
             $Obj->ShowArea();
             */
 
+            /*
             class Employee{
                 public $Name;
                 function __construct($Str){
@@ -65,7 +66,88 @@
             $Obj = new Employee('小红');
             echo '<br>';
             $Obj = NULL;
+            //$Obj->__destruct();
+            echo $Obj->Name."<>";
+            */
 
+            /*
+            class Employee{
+                public $Name;
+                function __construct($Str)
+                {
+                    $this->Name = $Str;
+                    echo '名为：'."'$this->Name'".'的对象已经建立！！'."<br>";
+                }
+                function __destruct()
+                {
+                    $this->Name = NULL;
+                    echo '对象释放成功'.'<br>';
+                }
+            };
+
+            $Obj1 = new Employee('xiaohong');
+            $Obj2 = new Employee('xiaohong');
+            $Obj3 = $Obj1;
+
+            echo ($Obj1 == $Obj2).'aaa'.'<br>';
+            echo ($Obj1 === $Obj2).'bbb'.'<br>';
+            echo ($Obj1 === $Obj3).'ccc'.'<br>';
+
+            $NewObj = new class('xiaowang'){
+                public $Name;
+                function __construct($Str)
+                {
+                    $this->Name = $Str;
+                    echo '名为：'."'$this->Name'".'的对象创建成功！'.'<br>';
+                }
+            };
+            */
+
+
+            class Payroll{  
+                
+                public $Name;
+                function __construct($Str)
+                {
+                   $this->Name = $Str; 
+                }
+                
+                function __destruct()
+                {
+                    $this->Name = NULL;
+                    echo "对象释放成功！";
+                }
+                
+
+                public function Payment($Hours,$PayRate){
+                    return $Hours * $PayRate;
+                }
+            }
+
+            
+            class BonusPayroll extends Payroll{
+                public $Name1;
+                function __construct($Str1)
+                {
+                   $this->Name1 = $Str1; 
+                }
+                
+                function __destruct()
+                {
+                    $this->Name1 = NULL;
+                    echo "对象释放成功！".'<br>';
+                }
+
+                public function Payment($Hours,$PayRate)
+                {
+                    echo $this->Name1.'的未含奖金薪资是：'.(Payroll::Payment($Hours,$PayRate)).'<br>';
+
+                    return Payroll::Payment($Hours,$PayRate) + 5000;
+                }
+            }
+            
+            $BpObj = new BonusPayroll('xh');
+            echo $BpObj->Name1."加上奖金的薪资为：".$BpObj->Payment(100,80).'<br>';
 
             
         ?>
