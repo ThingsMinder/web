@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Bank Cal</title>
+    </head>
+    <body>
+        <form method="POST" action="cal.php">
+            <fieldset>
+                <legend>个人资料</legend>
+                请输入姓名&nbsp;&nbsp;：<input type="text" name="UserName" size="30"><br>
+                请输入E-mail：<input type="text" name="UserMail" size="30"><br>
+            </fieldset>
+            <fieldset>
+                <legend>计算存款本利和</legend>
+                请输入本金（例如500000）：<input type="text" name="UserCache" size="20"><br>
+                请输入年利率（例如&nbsp;0.05）：<input type="text" name="UserRate" size="20"><br>
+                请输入月数（例如&nbsp;11）&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;：<input type="text" name="UserMonth" size="20"><br>
+            </fieldset>
+            <input type="submit" name="开始计算">
+            <input type="reset" name="重新输入">
+        </form>
+    </body>
+</html>

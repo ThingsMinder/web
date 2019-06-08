@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Test Page</title>
+        <script type="text/javascript">
+            function createXMLHttpRequest(){
+                try{
+                    var XHR = XMLHttpRequest();
+                }catch(e1){
+                    try{
+                        var XHR = new ActiveXObject('Msxml2.XMLHTTP');
+                    }catch(e2){
+                        try{
+                            var XHR = new ActiveXObject('Microsoft.XMLHTTP');
+                        }catch(e3){
+                            XHR = false;
+                        }
+                    }
+                }
+            }
+        </script>
+        <script type="text/javascript">
+            var XHR = null;
+            function startRequest(){
+                XHR = createXMLHttpRequest();
+                XHR.open("GET","readPoetry.php",true);
+                XHR.onreadystatechange = handleStateChange;
+                XHR.send(null);
+            }
+            function handleStateChange(){
+                if(XHR.readyState == 4){
+                    if(XHR.status == 200){
+                        document.getElementById("span1").innerHTML = XHR.responseText;
+                    }else{
+                        window.alert('无法显示');
+                    }
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <form id="form1">
+            <input id="button1" type="button" value="Display" onclick="startRequest()">
+            <br>
+            <br>
+            <span id="span1"></span>
+        </form>
+    </body>
+</html>
