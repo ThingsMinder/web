@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="utf-8" name="viewport" content="width=device-width,initial-scale=1">
+        <meta charset="utf-8">
         <title>移动网站</title>
         <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
         <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
         <script src="http://code.jquery.com/jquery-2.2.3.min.js"></script>
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        
         <script>
             var book_id = 0;
             function get_book_info(mode){
@@ -16,6 +18,7 @@
                 },"json");
             }
         </script>
+        
     </head>
     <body onload="javascript:get_book_info('next')">
         <div data-role="page" id="home">
@@ -49,7 +52,7 @@
             </div>
             <div data-role="content">
                 <img id="bookimg" width="100%">
-                <p id="bookmsg">
+                <p id="bookmsg" />
             </div>
             <div data-role="footer" data-position="fixed">
                 <div data-role="navbar">
