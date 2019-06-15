@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>TEST</title>
+    </head>
+    <body>
+        <p align='center'><img src="title.jpg"></p>
+        <p align='center'>欢迎上传文件，每次可以上传多个文件。</p>
+        <p align='center'>
+            <form method="POST" action="upload_02.php" enctype="multipart/form-data">
+                <input type="file" name="myfile[]" size="50"><br>
+                <input type="file" name="myfile[]" size="50"><br>
+                <input type="file" name="myfile[]" size="50"><br>
+                <input type="file" name="myfile[]" size="50"><br>
+                <br>
+                <input type="submit" value="上传">
+                <input type="reset" value="重新上传">
+            </form>
+        </p>
+    </body>
+</html>
