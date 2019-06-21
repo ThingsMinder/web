@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>查询密码</title>
+    </head>
+    <body>
+        <p align='center'><img src="inquire.jpg"></p>
+        <p>请输入您的姓名及E-mail账号，并选择一种显示方式，然后单击“查询”按钮.</p>
+        <form method="POST" action="search.php">
+            <table align='center'>
+                <tr>
+                    <td>账号：</td>
+                    <td><input type="text" name="account" size="10"></td>
+                </tr>
+
+                <tr>
+                    <td>电子邮件账户：</td>
+                    <td><input type="text" name="email" size="30"></td>
+                </tr>
+
+                <tr>
+                    <td>显示方式：</td>
+                    <td>
+                        <select name="show_method">
+                            <option value="网页显示">网页显示</option>
+                            <option value="E-mail 传送">E-mail 传送</option>
+                        </select>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td colspan="2" align='center'>
+                        <input type="submit" value="查询">
+                        <input type="reset" value="重新填写">
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </body>
+</html>

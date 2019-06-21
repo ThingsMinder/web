@@ -3,7 +3,7 @@
 
     $account = $_POST['account'];
     $password = $_POST['password'];
-    $name = $_POST['namae'];
+    $name = $_POST['name'];
     $sex = $_POST['sex'];
     $year = $_POST['year'];
     $month = $_POST['month'];
@@ -33,9 +33,11 @@
         $sql = "INSERT INTO users(account,password,name,sex,year,month,day,telephone,cellphone,address,email,url,comment)
                 VALUES('$account','$password','$name','$sex','$year','$month','$day','$telephone','$cellphone','$address','$email','$url','$comment')";
         
-        $result = execute_sql($link,'member',$sql);
-
+        //$result = execute_sql($link,'member',$sql);
+        execute_sql($link,'member',$sql);
+        //mysqli_free_result($result);
         mysqli_close($link);
+        //echo "dwedwdwe";
     }
 ?>
 

@@ -18,11 +18,11 @@
                     return false;
                 }
                 if(document.myForm.password.value.length > 10){
-                    alert("'用户密码'不可以超过10个字符哦。。。");
+                    alert("“用户密码”不可以超过10个字符哦。。。");
                     return false;
                 }
                 if(document.myForm.re_password.value.length == 0){
-                    alert("'用户密码'不可以超过10个字符哦。。。");
+                    alert("'密码确认'忘了填写哦。。。");
                     return false;
                 }
                 if(document.myForm.password.value != document.myForm.re_password.value){
@@ -34,6 +34,10 @@
                     return false;
                 }
                 if(document.myForm.year.value.length == 0){
+                    alert("您忘了填“出生年份”字段了。。。");
+                    return false;
+                }
+                if(document.myForm.month.value.length == 0){
                     alert("您忘了填“出生月份”字段了。。。");
                     return false;
                 }
@@ -94,12 +98,12 @@
 
                 <tr bgcolor='#99FF99'>
                     <td align='right'>*密码确认:</td>
-                    <td><input name="re_[assword" type="password" size="15">（再输入一次密码）</td>
+                    <td><input name="re_password" type="password" size="15">（再输入一次密码）</td>
                 </tr>
 
                 <tr bgcolor='#99FF99'>
                     <td align='right'>*姓名:</td>
-                    <td><input type="name" type="text" size="8"></td>
+                    <td><input name="name" type="text" size="8"></td>
                 </tr>
 
                 <tr bgcolor='#99FF99'>
@@ -113,7 +117,7 @@
                 <tr bgcolor='#99FF99'>
                     <td align='right'>*生日:</td>
                     <td>公元
-                        <input name="year" type="text" size="2">年
+                        <input name="year" type="text" size="4">年
                         <input name="month" type="text" size="2">月
                         <input name="day" type="text" size="2">日
                     </td>

@@ -6,9 +6,9 @@
     $password = $_POST['password'];
 
     $link = create_connection();
-    $sql = "SELECT * FROM member WHERE account = '$account' AND password = '$password'";
+    $sql = "SELECT * FROM users WHERE account = '$account' AND password = '$password'";
 
-    $result = execute_sql($link,'users',$sql);
+    $result = execute_sql($link,'member',$sql);
 
     if(mysqli_num_rows($result) == 0){
         mysqli_free_result($result);
