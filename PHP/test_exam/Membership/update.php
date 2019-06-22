@@ -14,7 +14,7 @@
         $year = $_POST['year'];
         $month = $_POST['month'];
         $day = $_POST['day'];
-        $telephone = $_POST['telephpne'];
+        $telephone = $_POST['telephone'];
         $cellphone = $_POST['cellphone'];
         $address = $_POST['address'];
         $email = $_POST['email'];

@@ -14,7 +14,7 @@
         $result = execute_sql($link,'member',$sql);
 
         $row = mysqli_fetch_assoc($result);
-        //echo " <script type='text/javascript'>alert($row{'account'});</script>";
+        //echo $row["password"];
           
 
     }
@@ -25,8 +25,9 @@
     <head>
         <meta charset="utf-8">
         <title>修改会员资料</title>
-        <script type="text/javascript">
-            function check_data(){
+        <script type="text/javascript">  
+            function check_data()
+            {
                 if(document.myForm.password.value.length == 0){
                     alert("“用户密码”一定要填写哦。。。");
                     return false;
@@ -64,7 +65,7 @@
                     return false;
                 }
                 if(document.myForm.month.value == 2 | document.myForm.month.value == 6
-                   document.myForm.month.value == 9 | document.myForm.month.value == 11){
+                   | document.myForm.month.value == 9 | document.myForm.month.value == 11){
                        if(document.myForm.day.value > 30){
                            alert("4月、6月、9月、11月只有30天哦！");
                            return false;
@@ -81,6 +82,7 @@
                 }
                 myForm.submit();
             }
+           
         </script>
 
     </head>
@@ -88,7 +90,7 @@
 
         <p align='center'><img src='modify.jpg'></p>
         <form action="update.php" name="myForm" method="POST">
-            <table border="2" align='center' bordercolor="#6666FF">
+            <table border="2" align="center" bordercolor="#6666FF">
                 <tr>
                     <td colspan="2" align='center' bgcolor='#6666FF'>
                         <font color='FFFFFF'>请填入下列资料（标示“*” 字段请务必填写）</font>
@@ -103,7 +105,8 @@
                 <tr bgcolor='#99FF99'>
                     <td align='right'>*用户密码：</td>
                     <td>
-                        <input type="password" name="password" size="15" value="<?php echo $row['password']; ?>">
+                        <input type="password" name="password" size="15" 
+                        value="<?php echo $row["password"]; ?>">
                         (请使用英文或数字键，勿使用特殊字符)
                     </td>
                 </tr>
@@ -112,7 +115,7 @@
                     <td align='right'>*密码确认：</td>
                     <td>
                         <input type="password" name="re_password" size="15"
-                               value="<?php echo $row['password']; ?>">
+                               value="<?php echo $row["password"]; ?>">
                         （再输入一次密码，并记下您的用户名称与密码）
                     </td>
                 </tr>
@@ -180,19 +183,17 @@
                 <tr bgcolor='#99FF99'>
                     <td align='right'>备注：</td>
                     <td>
-                        <textarea name="comment" rows="4" cols='45'>
-                            <?php echo $rows['comment'];?>
-                        </textarea>
+                        <textarea name="comment" rows="4" cols="45"><?php echo $row['comment'];?></textarea>
                     </td>
                 </tr>
 
                 <tr bgcolor='#99FF99'>
                     <td colspan="2" align='center'>
-                        <input type="button" value="修改资料" onclick="check_data()">
+                        <input type="button" value="修改资料" onClick="check_data()">
                         <input type="reset" value="重新填写">
                     </td>
                 </tr>
-
+              
             </table>
         </form>
     </body>

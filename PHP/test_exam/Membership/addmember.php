@@ -31,10 +31,10 @@
         mysqli_free_result($result);
 
         $sql = "INSERT INTO users(account,password,name,sex,year,month,day,telephone,cellphone,address,email,url,comment)
-                VALUES('$account','$password','$name','$sex','$year','$month','$day','$telephone','$cellphone','$address','$email','$url','$comment')";
+        VALUES('$account','$password','$name','$sex','$year','$month','$day','$telephone','$cellphone','$address','$email','$url','$comment')";
         
-        //$result = execute_sql($link,'member',$sql);
-        execute_sql($link,'member',$sql);
+        $result = execute_sql($link,'member',$sql);
+        //execute_sql($link,'member',$sql);
         //mysqli_free_result($result);
         mysqli_close($link);
         //echo "dwedwdwe";
