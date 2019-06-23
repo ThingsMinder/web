@@ -7,7 +7,7 @@
     $show_method = $_POST['show_method'];
 
     $link = create_connection();
-    $sql = "SELECT name,password FROM users WHERE account='$account' AND email='$email'";
+    $sql = "SELECT name,password FROM users WHERE account='$account' or email='$email'";
     $result = execute_sql($link,'member',$sql);
 
     if(mysqli_num_rows($result) == 0){
