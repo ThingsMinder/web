@@ -3,24 +3,46 @@
     <head>
         <meta charset="utf-8">
         <title>登录</title>
+        <script type="text/javascript">
+            function check_data(){
+                if(document.myForm.job_number.value.length == 0){
+                    alert("账号名称不能为空！");
+                    return false;
+                }else if(document.myForm.job_number.value.length > 10){
+                    alert("账号名称不能超过10个字符！");
+                    return false;
+                }else if(document.myForm.password.value.length == 0){
+                    alert('密码不能为空！');
+                    return false;
+                }else if(document.myForm.password.value.length > 10){
+                    alert('密码不能超过10个字符！');
+                    return false;
+                }else{
+                    myForm.submit();
+                }
+            }
+        </script>
     </head>
     <body>
-        <p align='center'><img src="3.jpg"></p>
+        <p align='center'><img src="4.jpg" height="300" width="600"></p>
         <p align='center'>
-            <form action="check_pwd.php" name="myForm" >
+            <form action="check_pwd.php" name="myForm" method="POST">
                 <table align='center'>
                     <tr>
-                        <td align='right'>*账号</td>
-                        <td><input name="account" type="text"></td>
+                        <td align='right'>账号</td>
+                        <td><input name="job_number" type="text"></td>
                     </tr>
 
                     <tr>
-                        <td align='right'>*密码</td>
+                        <td align='right'>密码</td>
                         <td><input name="password" type="password"></td>
                     </tr>
-
-
                 </table>
+
+                <p align='center'>
+                    <input type="button" value="登录" onclick="check_data()">
+                    <input type="reset" value="重填">
+                </p>
             </form>
 
         </p>
