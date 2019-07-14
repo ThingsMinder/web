@@ -25,22 +25,23 @@
 
         <?php
             $id = $_COOKIE['id'];
+            $job_number = $_POST['job_number'];
             require_once('dbtools.inc.php');
-            $records_per_page = 5;
 
+            $link = create_connection();
+            $sql1 = "SELECT * FROM users WHERE job_number = $job_number";
+            $result1 = execute_sql($link,'mm',$sql1);
+            $row1 = mysqli_fetch_assoc($result1);
+
+            /*
+            $sql = "SELECT id,author,subject,date FROM message ORDER BY date DESC";
+            $result = execute_sql($link,'mm',$sql);         
+            $records_per_page = 5;
             if(isset($_GET['page'])){
                 $page = $_GET['page'];
             }else{
                 $page = 1;
             }
-
-            $link = create_connection();
-            $sql = "SELECT id,author,subject,date FROM message ORDER BY date DESC";
-            $sql1 = "SELECT * FROM users WHERE id = $id";
-            $result = execute_sql($link,'mm',$sql);
-            $result1 = execute_sql($link,'mm',$sql1);
-            $row1 = mysqli_fetch_assoc($result1);
-
             $total_records = mysqli_num_rows($result);
 
             $total_pages = ceil($total_pages/$records_per_page);
@@ -92,21 +93,22 @@
             echo "</p>";
 
             mysqli_free_result($result);
+            */
             mysqli_free_result($result1);
             mysqli_close($link);
+            
 
         ?>
-            <form method="post" action="post.php" name="myForm">
+        <form method="post" action="post.php" name="myForm">
             <table border="0" width='800' align='center' cellspacing='0'>
                 <tr bgcolor='#0084CA' align='center'>
                     <td colspan="2"><font color='white'>请在此输入新的讨论</font></td>
                 </tr>
                 <tr bgcolor='#D9F2FF'>
                     <td width='15%'>作者:</td>
-                    <!--<td width='85%'><input name="author" type="text" size="50" value= "$_POST['job_number']"></td>-->
                     <td width='85%'>
                         <?php 
-                            echo $row1["name"];
+                            echo $row1{"name"};
                         ?>
                     </td>
                 </tr>
