@@ -3,8 +3,38 @@
     <head>
         <meta charset="utf-8">
         <title>My Page</title>
+        <script type="text/javascript">
+            //alert('My page');
+            var x = "mypage1";
+            //alert(x);
+            function f(){
+               var y = document.getElementById('mypage').innerHTML;
+               /*
+               document.getElementById('mypage').innerHTML = x;
+               document.getElementById('mypage1').innerHTML = x;   
+               document.getElementById('mypage2').innerHTML = x; 
+               */
+
+               while(Element.id == 'mypage1'){
+                   document.getElementById('mypage1').innerHTML = x;
+               }
+               
+               //document.getElementById('mypage1').innerHTML = x;
+
+            }
+            
+        </script>
     </head>
     <body>
-        <p>My Page</p>
+        <h1>1st</h1>
+        <p id="mypage" onclick="f()">
+            My Page
+            <p id="mypage1" >My</p>
+            <p id="mypage1" >My</p>       
+        </p>
+ 
+        <h2>2nd</h2>
+        <h3>3rd</h3>
+        <h4>4th</h4>
     </body>
 </html>
