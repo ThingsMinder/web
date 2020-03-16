@@ -38,7 +38,7 @@ document.write(arr.forEach(function(element){
 arr.forEach(function(s){
     document.write(s + '<br>');
 });
-*/
+
 
 function count(){
     var arr = [];
@@ -53,7 +53,19 @@ function count(){
 }
 
 var results = count();
-var f1 = results[1];
+var f1 = results[2];
 alert(f1());
+*/
 
+function create_counter(initial){
+    var x = initial || 0;
+    return{
+        inc:function(){
+            x += 1;
+            return x;
+        }
+    }
+}
+
+var c1 = create_counter(10);
 
